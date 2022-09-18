@@ -1,0 +1,158 @@
+@use "../config/vars" as *;
+
+.home {
+  .header {
+    padding-block: 10px;
+    transition: var(--transition);
+    background-color: transparent;
+
+    &.active {
+      z-index: 100;
+      background-color: var(--clr-white);
+      box-shadow: var(--shadow-black-100);
+      position: fixed;
+      width: 100%;
+      @include top-right(0);
+      left: 0;
+      padding-block: 0px;
+
+      .nav-toggler {
+        box-shadow: var(--shadow-black-100);
+        color: var(--clr-primary);
+        background-color: initial;
+      }
+
+      .nav-link {
+        color: var(--clr-primary);
+
+        span {
+          background-color: var(--clr-primary);
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      @include flex-between;
+
+      &-toggler {
+        display: none;
+        padding: 5px 10px;
+        background-color: var(--clr-primary);
+        color: var(--clr-white);
+      }
+
+      &-brand {
+        font-size: var(--size-4);
+        padding-block: 10px;
+        display: flex;
+        align-items: center;
+
+        span {
+          color: var(--clr-primary);
+        }
+      }
+
+      &-list {
+        display: flex;
+      }
+
+      &-item:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      &-link {
+        font-size: var(--size-3);
+        position: relative;
+        color: var(--clr-white);
+
+        &:hover {
+          span {
+            width: 83%;
+          }
+        }
+
+        span {
+          transition: var(--transition);
+          position: absolute;
+          height: 2px;
+          width: 0%;
+          bottom: -10px;
+          left: 0;
+          background-color: var(--clr-white);
+
+          &::after {
+            display: block;
+            @include pseudo();
+            @include box(10% 2px);
+            background-color: inherit;
+            top: 0;
+          }
+
+          &::after {
+            right: -8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(md, "max") {
+  .home {
+    .header {
+      .nav {
+        flex-wrap: wrap;
+
+        &-toggler {
+          display: block;
+        }
+
+        &-collapse {
+          flex-basis: 100%;
+          max-height: 0;
+          overflow: hidden;
+          transition: var(--transition-fast);
+        }
+
+        &-list {
+          flex-direction: column;
+          padding-block: 10px;
+          box-shadow: var(--shadow-black-100);
+        }
+
+        &-item {
+          margin-right: 0 !important;
+        }
+
+        &-link {
+          width: 100%;
+          padding-block: 10px;
+          text-align: center;
+          color: var(--clr-primary);
+          z-index: 1;
+
+          &:hover {
+            span {
+              width: 100%;
+            }
+          }
+
+          span {
+            top: 0;
+            z-index: -1;
+            left: 0;
+            opacity: 0.2;
+            height: 100%;
+            width: 0%;
+            background-color: aquamarine;
+
+            &::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

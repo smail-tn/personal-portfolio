@@ -1,0 +1,85 @@
+/*===== BASE =====*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  &,
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+img,
+video,
+audio,
+span,
+label,
+select,
+button,
+input,
+select,
+textarea,
+a {
+  display: inline-block;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+audio,
+video {
+  user-select: none;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+input {
+  border: 1px solid #bbb;
+  outline: none;
+}
+button {
+  border: none;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+}
+button,
+input,
+select {
+  border-radius: 2px;
+}
+
+$padding: 3px 10px;
+select,
+button {
+  padding: $padding;
+}
+input {
+  &:not([type="color"]) {
+    padding: $padding;
+  }
+
+  &[type="file"],
+  &[type="color"] {
+    cursor: pointer;
+  }
+}

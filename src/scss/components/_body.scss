@@ -1,0 +1,19 @@
+@use "../config/vars" as *;
+
+html {
+  font-size: 10px;
+  outline: none;
+}
+
+body {
+  background-color: var(--body-clr);
+  font-family: var(--body-font);
+  transition: all 0.1s linear  , padding-top 0s;
+  font-size: var(--fz-normal);
+  color: var(--text-clr);
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-weight: normal;
+  letter-spacing: 0.9px;
+
+}

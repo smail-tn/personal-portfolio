@@ -1,0 +1,14 @@
+@use "./config/vars" as *;
+//  importing components
+
+@use "./components/reset";
+@use "./components/body";
+@use "./components/buttons";
+@use "./components/scroll";
+@use "./components/reusable";
+
+//  importing sections
+@use './layout/header';
+@use './layout/home';
+@use './layout/about';
+@use './layout/services';

@@ -1,0 +1,22 @@
+.flex {
+  display: flex;
+}
+.flex-reset {
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+@mixin flex-center() {
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-between($wrap : false) {
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: if($wrap ,wrap ,null);
+}
+@mixin flex-center($wrap:false) {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: if($wrap ,wrap ,null);
+}

@@ -1,0 +1,202 @@
+@mixin pseudo($content: "", $pos: absolute) {
+  content: $content;
+  position: $pos;
+}
+
+@mixin page-overlay($bg: black, $opacity: 0.7, $zindex: 1000) {
+  background-color: $bg;
+  z-index: $zindex;
+  position: fixed;
+  @include box(100vw 100vh);
+  @include top-left(0);
+  @include fade("hide");
+
+  // Fade for backdrop
+  &.show {
+    @include fade("show", $opacity);
+  }
+}
+
+@mixin overlay($bg: black, $opacity: 0.5) {
+  background-color: rgba($bg, $opacity);
+  @include box(100%) ;
+}
+
+@mixin fade($type: "hide", $op: 0) {
+  @if ($type == "hide") {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s;
+  } @else if ($type == "show") {
+    visibility: visible;
+    opacity: $op;
+    transition: visibility 1s, opacity 1s;
+  }
+}
+
+@mixin background-fill($initial, $hover, $inverted: false) {
+  background: linear-gradient(90deg, $hover 50%, $initial 50%);
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: right bottom;
+
+  @if $inverted {
+    background-position: left bottom;
+  }
+
+  &:hover {
+    background-position: left bottom;
+
+    @if $inverted {
+      background-position: right bottom;
+    }
+  }
+}
+
+@function longShadow($color, $size: 10) {
+  $val: 0px 0px $color;
+
+  @for $i from 4 through floor($size * 1.2) {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+
+  @return $val;
+}
+
+@mixin longShadow($color, $size) {
+  text-shadow: longShadow($color, $size);
+}
+
+@mixin clearfix() {
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+@function black($opacity) {
+  @return rgba(0, 0, 0, $opacity);
+}
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
+
+// my triangle
+@mixin triangle($size, $color, $direction) {
+  height: 0;
+  width: 0;
+
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+
+  $foreground-color: nth($color, 1);
+  $background-color: if(length($color) ==2, nth($color, 2), transparent);
+
+  @if ($direction ==up) or
+    ($direction ==down) or
+    ($direction ==right) or
+    ($direction ==left)
+  {
+    $width: $width / 2;
+    $height: if(length($size) > 1, $height, $height/2);
+
+    @if ($direction ==up) {
+      border-bottom: $height solid $foreground-color;
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+    } @else if ($direction ==right) {
+      border-bottom: $width solid $background-color;
+      border-left: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    } @else if $direction ==down {
+      border-left: $width solid $background-color;
+      border-right: $width solid $background-color;
+      border-top: $height solid $foreground-color;
+    } @else if $direction ==left {
+      border-bottom: $width solid $background-color;
+      border-right: $height solid $foreground-color;
+      border-top: $width solid $background-color;
+    }
+  } @else if ($direction ==up-right) or ($direction ==up-left) {
+    border-top: $height solid $foreground-color;
+
+    @if $direction ==up-right {
+      border-left: $width solid $background-color;
+    } @else if $direction ==up-left {
+      border-right: $width solid $background-color;
+    }
+  } @else if ($direction ==down-right) or ($direction ==down-left) {
+    border-bottom: $height solid $foreground-color;
+
+    @if $direction ==down-right {
+      border-left: $width solid $background-color;
+    } @else if $direction ==down-left {
+      border-right: $width solid $background-color;
+    }
+  } @else if ($direction ==inset-up) {
+    border-color: $background-color $background-color $foreground-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction ==inset-down) {
+    border-color: $foreground-color $background-color $background-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction ==inset-right) {
+    border-color: $background-color
+      $background-color
+      $background-color
+      $foreground-color;
+    border-style: solid;
+    border-width: $width $height;
+  } @else if ($direction ==inset-left) {
+    border-color: $background-color
+      $foreground-color
+      $background-color
+      $background-color;
+  }
+}
+
+//  end to  rgba  function
+
+@function half($el) {
+  @return calc($el/2);
+}
+
+@function double($el) {
+  @return calc($el * 2);
+}
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@function border($color) {
+  @return 1px solid $color;
+}
+
+@mixin circle($b: 50%) {
+  border-radius: $b;
+}
+
+@mixin box($size) {
+  @if (length($size) > 1) {
+    width: nth($size, 1);
+    height: nth($size, length($size));
+  } @else {
+    width: $size;
+    height: $size;
+  }
+}
+@mixin max-box($size) {
+  @if (length($size) > 1) {
+    max-width: nth($size, 1);
+    max-height: nth($size, length($size));
+  } @else {
+    max-width: $size;
+    max-height: $size;
+  }
+}

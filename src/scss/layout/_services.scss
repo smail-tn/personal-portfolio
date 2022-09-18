@@ -1,0 +1,54 @@
+@use "../config/vars" as *;
+
+.services {
+  background-color: var(--clr-black-100);
+  &-data {
+    padding-top: 60px;
+
+    display: flex;
+    @include flex-center;
+    gap: 20px;
+    flex-wrap: wrap;
+    .box {
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-black-100);
+      text-align: center;
+      overflow: hidden;
+      flex-grow: 1;
+      flex-basis: 200px;
+      transition: var(--transition-fast);
+      .head {
+        border-radius: 20px;
+        border-bottom-right-radius: 0px;
+        color: var(--clr-white);
+        padding: 20px;
+        width: fit-content;
+        margin-inline: auto;
+        font-size: var(--size-5);
+        background-color: var(--clr-primary);
+        margin-bottom: 30px;
+        transition: var(--transition), border-radius 0.1s;
+      }
+      &:hover {
+        translate: 0 -10px;
+        .text * {
+          color: var(--clr-white) !important;
+          transition-delay: 0.1s;
+        }
+        .head {
+          @include circle;
+          background-color: var(--clr-white);
+          color: var(--clr-primary);
+
+          box-shadow: 0 0 0 600px var(--clr-primary);
+        }
+      }
+      .text {
+        *:first-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

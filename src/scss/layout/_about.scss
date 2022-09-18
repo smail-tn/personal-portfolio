@@ -1,0 +1,71 @@
+@use "../config/vars" as *;
+
+.about {
+  .container {
+    display: flex;
+    @include flex-between;
+    & > div {
+      flex: 1;
+    }
+  }
+  &-image { 
+    align-self: flex-end;
+  }
+  &-me {
+    .section-header {
+      align-items: flex-start;
+    }
+  }
+
+  .info {
+    margin-top: 20px;
+    p {
+      margin-bottom: 30px;
+    }
+    .skills {
+      .skill {
+        margin-bottom: 10px;
+        .header {
+          margin-bottom: 10px;
+          display: flex;
+          @include flex-between;
+          h1 {
+            font-size: var(--fz-normal);
+          }
+        }
+        .progress {
+          border-radius: 10px;
+          background-color: rgba(33, 243, 26, 0.11);
+          position: relative;
+          height: 8px;
+          span {
+            display: block;
+            width: var(--pre);
+            height: 100%;
+            background-color: var(--clr-primary);
+            border-radius: 10px;
+            position: relative;
+            &::after { 
+                @include pseudo;
+                @include box(15px 30px);
+                right: 0;
+                top: 50%;
+                border:2px solid var(--clr-primary) ;
+                
+                translate: 0 -50%;
+                background-color: var(--clr-white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(md, "max") {
+  .about {
+    &-image {
+      display: none;
+    }
+  }
+}

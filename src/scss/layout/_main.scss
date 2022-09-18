@@ -1,0 +1,28 @@
+@use "../config/vars" as *;
+
+/*
+    [attribute ~= value] => contains a word seperated
+    [attribute *= value] => contains a string 
+    [attribute ^= value] => starts with  a string 
+    [attribute $= value] => ends with  a string 
+*/
+
+/* 
+    linear-gradient( direction , colorstop1 size , ...) 
+        - directions :
+            to right    ==   90deg
+            to left     ==   -90deg  270deg 
+            to bottom   ==   180deg 
+            to  top     ==   0deg  360deg 
+*/
+
+/* 
+    filters : 
+        grayscale  ( % ) 
+        invert     ( % ) 
+        blur       ( px )
+        saturate   ( ) 0-1 / 0% - 100%  
+        brightness (  % ) 
+*/
+
+

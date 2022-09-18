@@ -1,0 +1,75 @@
+@import "./mixins";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap");
+// M Plus 1 code
+
+:root {
+  /* ===== NAVIGATION SITTINGS ==== */
+  /* ======= BODY PROPERTIES ====== */
+  --body-font: "Kaushan Script",sans-serif;
+  --body-clr: #fff;
+  --text-clr: var(--clr-black-400);
+
+  /* =========== clrS =========== */
+  /* Change favorite clr */
+  // --clr-primary: #4db5ff;
+  // --clr-primary-alt: #4db5ff66;
+  // --clr-bg: #1f1f38;
+  // --clr-bg-alt: #2c2e6c;
+  // --clr-white: #fff;
+  // --clr-light: rgba(255 255 255 / 0.25);
+  //
+  --clr-primary: #00a78e;
+  --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --clr-black-900: #000;
+  --clr-black-400: #646f87;
+  --clr-black-100: #f7f7f7;
+  --clr-white: #fff;
+  --clr-black-alpha-100: rgba(0, 0, 0, 0.05);
+  --title-clr: var(--clr-black-900);
+
+  /* ========= TRANSITION ========= */
+  --section-padding: 8rem;
+  --transition: all 0.3s linear;
+  --transition-fast: all 0.2s linear;
+  --header-height : 7rem;
+  /* ============= FONT ============ */
+
+  --fz-normal: 14px;
+  --fz-small: 13px;
+  --fz-smaller: 12px;
+
+  /* ====== FONT MEDIA QUERY ====== */
+
+  @include media(xl) {
+    --fz-normal: 15px;
+    --fz-small: 14px;
+    --fz-smaller: 13px;
+  }
+
+  @include media(xxl) {
+    --fz-normal: 16px;
+    --fz-small: 15px;
+    --fz-smaller: 14px;
+  }
+
+  /* ========= FONT WEIGHT ======== */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 900;
+  /* ==== MARGINS AND PADDINGS ==== */
+  --size-1: 0.5rem;
+  --size-2: 1rem;
+  --size-3: 1.5rem;
+  --size-4: 2rem;
+  --size-5: 2.5rem;
+  --size-6: 3rem;
+  --size-7: 3.5rem;
+  --size-8: 4rem;
+  --size-9: 4.5rem;
+  --size-10: 5rem;
+  /*========== z index ==========*/
+}
