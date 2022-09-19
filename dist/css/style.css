@@ -762,13 +762,17 @@ p {
   }
 }
 .gallery .images {
-  display: flex;
   padding-top: 40px;
-  flex-wrap: wrap;
-  gap: 20px;
+  column-count: 3;
+}
+@media (max-width: 767px) {
+  .gallery .images {
+    column-count: 2;
+  }
 }
 .gallery .images .box {
-  flex: 2 1 200px;
+  margin: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
   overflow: hidden;
   position: relative;
