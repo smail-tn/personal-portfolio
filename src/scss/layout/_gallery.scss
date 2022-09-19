@@ -42,6 +42,10 @@
         @include box(100%);
         cursor: pointer;
       }
+      @include media(sm,"max") { 
+        @include max-box(300px);
+        
+      }
       p {
         display: flex;
         @include flex-between;
@@ -54,7 +58,7 @@
       cursor: pointer;
       position: absolute;
       top: 50%;
-      @include box(50px);
+      @include box(40px);
       background-color: var(--clr-white);
       color: var(--clr-black-400);
       opacity: 0.9;
