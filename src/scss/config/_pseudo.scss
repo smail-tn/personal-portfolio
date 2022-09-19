@@ -22,7 +22,7 @@
   @include box(100%) ;
 }
 
-@mixin fade($type: "hide", $op: 0) {
+@mixin fade($type: "hide", $op: 1) {
   @if ($type == "hide") {
     visibility: hidden;
     opacity: 0;
@@ -30,7 +30,7 @@
   } @else if ($type == "show") {
     visibility: visible;
     opacity: $op;
-    transition: visibility 1s, opacity 1s;
+    transition: visibility .5s, opacity .5s;
   }
 }
 

@@ -12,7 +12,10 @@
 </head>
 
 <body>
-  <div class="home" id="home">
+
+  <div class="page-overlay"></div>
+  <!--  -->
+  <div class="home section" id="home">
     <header class="header">
       <nav class="container nav">
         <a href="#" class="nav-brand">
@@ -61,7 +64,7 @@
         </div>
         <div class="landing-image">
           <div class="image">
-            <img src="dist/imgs/hero.png" alt="" />
+            <img src="dist/imgs/hero.png" />
           </div>
           <div class="social">
             <a href="#"><i class="fab fa-dribbble"></i></a>
@@ -73,10 +76,10 @@
     </div>
   </div>
   <main class="main">
-    <div class="about section" id="about">
+    <section class="about section" id="about">
       <div class="about-data container">
         <div class="about-image">
-          <img src="dist/imgs/about_hero.png" alt="" />
+          <img src="dist/imgs/about_hero.png" />
         </div>
         <div class="about-me">
           <div class="section-header">
@@ -144,14 +147,18 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- services -->
     <section id="services" class="services section">
       <div class="section-header">
         <h1 class="section-title">services</h1>
         <h2 class="section-subtitle">services i provide</h2>
-        <ul class="line"><li></li><li></li><li></li></ul>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
       <div class="container">
         <div class="services-data">
@@ -160,7 +167,8 @@
             <div class="text">
               <h1>responsive design</h1>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et! Doloremque!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et!
+                Doloremque!
               </p>
             </div>
           </div>
@@ -169,7 +177,8 @@
             <div class="text">
               <h1>clean code</h1>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et! Doloremque!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et!
+                Doloremque!
               </p>
             </div>
           </div>
@@ -178,7 +187,8 @@
             <div class="text">
               <h1>graphic design</h1>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et! Doloremque!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et!
+                Doloremque!
               </p>
             </div>
           </div>
@@ -187,7 +197,8 @@
             <div class="text">
               <h1>seo marketing</h1>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et! Doloremque!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et!
+                Doloremque!
               </p>
             </div>
           </div>
@@ -196,9 +207,85 @@
             <div class="text">
               <h1>great support </h1>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et! Doloremque!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe ipsam aliquam ratione, possimus et!
+                Doloremque!
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+
+    <section class="section gallery" id="portfolio">
+      <div class="section-header">
+        <h1 class="section-title">portfolio</h1>
+        <h2 class="section-subtitle">our latest work</h2>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="gallery-data">
+
+        <!--  -->
+        <div class="gallery-preview">
+          <!--  -->
+          <div class="space">
+            <span class="close" > <i class="fas fa-times"></i></span>
+            <div class="image">
+              <img src=" alt="">
+              <p> <span class="alt">web design</span>
+              <span class="number">5/5</span></p>
+
+            </div>
+          </div>
+          <div class="gallery-controls">
+            <span class="prev"><i class="fas fa-arrow-left"> </i></span>
+            <span class="next"><i class="fas fa-arrow-right"> </i></span>
+          </div>
+        </div>
+
+
+        <!--  -->
+        <ul class="gallery-header">
+          <li> all </li>
+          <li data-type="type1">web design</li>
+          <li data-type="type2">photography</li>
+          <li data-type="type3">wordpress</li>
+        </ul>
+        <div class="images container">
+          <div class="box" data-type="type1">
+            <h1 class="alt">alt image </h1>
+            <span class="icon"> <i class="fas fa-search"></i></span>
+            <img alt="web design" src="dist/imgs/portfolio/portfolio-1.jpg">
+          </div>
+          <div class="box" data-type="type1">
+            <h1 class="alt">alt image </h1>
+            <span class="icon"> <i class="fas fa-search"></i></span>
+            <img alt="web design" src="dist/imgs/portfolio/portfolio-2.jpg">
+          </div>
+          <div class="box" data-type="type2">
+            <h1 class="alt">alt image </h1>
+            <span class="icon"> <i class="fas fa-search"></i></span>
+            <img alt="photography" src="dist/imgs/portfolio/portfolio-3.jpg">
+          </div>
+          <div class="box" data-type="type2">
+            <h1 class="alt">alt image </h1>
+            <span class="icon"> <i class="fas fa-search"></i></span>
+            <img alt="photography" src="dist/imgs/portfolio/portfolio-4.jpg">
+          </div>
+          <div class="box" data-type="type3">
+            <h1 class="alt">alt image </h1>
+            <span class="icon"> <i class="fas fa-search"></i></span>
+            <img alt="wordpress" src="dist/imgs/portfolio/portfolio-5.jpg">
+          </div>
+          <div class="box" data-type="type3">
+            <h1 class="alt">alt image </h1>
+            <span class="icon"> <i class="fas fa-search"></i></span>
+            <img alt="wordpress" src="dist/imgs/portfolio/portfolio-6.jpg">
           </div>
         </div>
       </div>

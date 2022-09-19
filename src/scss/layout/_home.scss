@@ -1,6 +1,7 @@
 @use "../config/vars" as *;
 
 .home {
+  padding: 0 !important;
   position: relative;
   z-index: 1;
   min-height: 100vh;

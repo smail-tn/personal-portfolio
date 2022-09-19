@@ -5,12 +5,13 @@
     padding-block: 10px;
     transition: var(--transition);
     background-color: transparent;
+    z-index: 10000;
 
     &.active {
-      z-index: 100;
       background-color: var(--clr-white);
       box-shadow: var(--shadow-black-100);
       position: fixed;
+      z-index: 4;
       width: 100%;
       @include top-right(0);
       left: 0;
@@ -22,6 +23,7 @@
         background-color: initial;
       }
 
+  
       .nav-link {
         color: var(--clr-primary);
 
@@ -65,6 +67,11 @@
         font-size: var(--size-3);
         position: relative;
         color: var(--clr-white);
+        &.active {
+          span {
+            width: 83%;
+          }
+        }
 
         &:hover {
           span {
@@ -130,26 +137,10 @@
           padding-block: 10px;
           text-align: center;
           color: var(--clr-primary);
-          z-index: 1;
-
-          &:hover {
-            span {
-              width: 100%;
-            }
-          }
+    
 
           span {
-            top: 0;
-            z-index: -1;
-            left: 0;
-            opacity: 0.2;
-            height: 100%;
-            width: 0%;
-            background-color: aquamarine;
-
-            &::after {
-              content: none;
-            }
+            display: none;
           }
         }
       }

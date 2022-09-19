@@ -8,12 +8,15 @@ html {
 body {
   background-color: var(--body-clr);
   font-family: var(--body-font);
-  transition: all 0.1s linear  , padding-top 0s;
+  transition: all 0.1s linear, padding-top 0s;
   font-size: var(--fz-normal);
   color: var(--text-clr);
   line-height: 1.5;
   overflow-x: hidden;
   font-weight: normal;
   letter-spacing: 0.9px;
-
+  position: relative;
+}
+.page-overlay { 
+  @include page-overlay;
 }

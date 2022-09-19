@@ -1,0 +1,157 @@
+@use "../config/vars" as *;
+.gallery {
+  position: relative;
+  &-data {
+    padding-block-start: 50px;
+  }
+  &-preview {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    @include flex-center;
+    display: flex;
+    @include fade();
+    &.show {
+      @include fade("show");
+      .space {
+        scale: 1;
+      }
+    }
+    .close {
+      cursor: pointer;
+      position: absolute;
+      color: var(--clr-primary);
+      @include circle;
+      @include flex-center;
+      display: flex;
+      background-color: var(--clr-white);
+      @include box(40px);
+      @include top-right(-30px -20px);
+    }
+
+    .space {
+      transition: var(--transition-fast);
+      scale: 0;
+      @include max-box(400px);
+      position: relative;
+      img {
+        @include box(100%);
+        cursor: pointer;
+      }
+      p {
+        display: flex;
+        @include flex-between;
+        color: var(--clr-white);
+      }
+    }
+  }
+  &-controls {
+    span {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      @include box(50px);
+      background-color: var(--clr-white);
+      color: var(--clr-black-400);
+      opacity: 0.9;
+      @include circle;
+      display: flex;
+      @include flex-center;
+      &.prev {
+        left: 30px;
+      }
+      &.next {
+        right: 30px;
+      }
+    }
+  }
+  &-header {
+    display: flex;
+    @include flex-center;
+    gap: 20px;
+    li {
+      padding: 10px 20px;
+      border: border(var(--clr-primary));
+      color: var(--clr-primary);
+      border-radius: 4px;
+      cursor: pointer;
+      background-image: linear-gradient(
+        90deg,
+        var(--clr-primary) 50%,
+        transparent 50%
+      );
+      background-size: 200%;
+      background-position: right;
+      transition: var(--transition-fast);
+      &:hover,
+      &.active {
+        background-position: left top;
+        color: var(--clr-white);
+      }
+    }
+  }
+  .images {
+    display: flex;
+    padding-block-start: 40px;
+    @include flex-between(true);
+
+    gap: 20px;
+    .box {
+      flex: 1 1 250px;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      &:hover {
+        &::after {
+          @include fade("show");
+        }
+        .icon,
+        .alt {
+          opacity: 1;
+        }
+        .icon {
+          right: 20px;
+        }
+        .alt {
+          left: 20px;
+        }
+      }
+      &::after {
+        @include top-right(0);
+        @include pseudo;
+        @include overlay;
+        @include fade();
+        pointer-events: none;
+      }
+      img {
+        @include box(100%);
+      }
+      .icon,
+      .alt {
+        position: absolute;
+        z-index: 3;
+        transition: var(--transition-fast);
+        color: var(--clr-primary);
+        opacity: 0;
+        user-select: none;
+      }
+      .alt {
+        @include top-left(10px 0px);
+      }
+      .icon {
+        @include box(40px);
+        @include circle;
+        display: flex;
+        @include flex-center;
+        background-color: var(--clr-primary);
+        color: var(--clr-white);
+        @include bottom-right(10px 0px);
+      }
+    }
+  }
+}

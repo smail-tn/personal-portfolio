@@ -12,7 +12,8 @@ h6 {
   letter-spacing: 1px;
 }
 
-* > * {
+* > *,
+* * {
   color: inherit;
   font-family: inherit;
   font-weight: inherit;
@@ -60,7 +61,7 @@ p {
   .section-title {
     color: var(--clr-primary);
   }
-  .section-subtitle { 
+  .section-subtitle {
     font-size: var(--size-6);
     font-weight: var(--fw-bold);
   }

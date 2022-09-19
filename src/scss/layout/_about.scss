@@ -1,6 +1,18 @@
 @use "../config/vars" as *;
 
 .about {
+  position: relative;
+  &::before { 
+    // @include pseudo   ; 
+    height: 400px;
+    width: 300px;
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+    translate: 0 -50%;
+    opacity: .3;
+    top: 50%;
+    z-index: -1;
+  }
   .container {
     display: flex;
     @include flex-between;
