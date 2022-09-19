@@ -95,6 +95,9 @@
         background-position: left top;
         color: var(--clr-white);
       }
+      @include media(md,'max') { 
+        padding: 5px 10px;
+      }
     }
   }
   .images {

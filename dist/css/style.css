@@ -749,6 +749,11 @@ p {
   background-position: left top;
   color: var(--clr-white);
 }
+@media (max-width: 767px) {
+  .gallery-header li {
+    padding: 5px 10px;
+  }
+}
 .gallery .images {
   display: flex;
   padding-block-start: 40px;
