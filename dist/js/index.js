@@ -154,5 +154,4 @@ function gallery() {
   });
 }
 
-
 gallery();
