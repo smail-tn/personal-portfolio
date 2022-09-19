@@ -306,13 +306,14 @@ p {
   transition: var(--transition);
   background-color: transparent;
   z-index: 10000;
+  position: relative;
+  width: 100%;
+  z-index: 4;
 }
 .home .header.active {
   background-color: var(--clr-white);
   box-shadow: var(--shadow-black-100);
   position: fixed;
-  z-index: 4;
-  width: 100%;
   top: 0;
   right: 0;
   left: 0;
@@ -668,7 +669,9 @@ p {
   transition: visibility 0.5s, opacity 0.5s;
 }
 .gallery-preview.show .space {
-  scale: 1;
+  scale: 1.2;
+  translate: 0 0;
+  rotate: 0deg;
 }
 .gallery-preview .close {
   cursor: pointer;
@@ -687,20 +690,22 @@ p {
 .gallery-preview .space {
   transition: var(--transition-fast);
   scale: 0;
+  rotate: 180deg;
+  translate: 0 -40px;
   max-width: 400px;
   max-height: 400px;
   position: relative;
+}
+@media (max-width: 575px) {
+  .gallery-preview .space {
+    max-width: 270px;
+    max-height: 270px;
+  }
 }
 .gallery-preview .space img {
   width: 100%;
   height: 100%;
   cursor: pointer;
-}
-@media (max-width: 575px) {
-  .gallery-preview .space {
-    max-width: 300px;
-    max-height: 300px;
-  }
 }
 .gallery-preview .space p {
   display: flex;
@@ -708,10 +713,14 @@ p {
   justify-content: space-between;
   color: var(--clr-white);
 }
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 .gallery-controls span {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
   width: 40px;
   height: 40px;
   background-color: var(--clr-white);
@@ -722,19 +731,16 @@ p {
   align-items: center;
   justify-content: center;
 }
-.gallery-controls span.prev {
-  left: 30px;
-}
-.gallery-controls span.next {
-  right: 30px;
-}
 .gallery-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .gallery-header li {
+  white-space: nowrap;
+  text-align: center;
   padding: 10px 20px;
   border: 1px solid var(--clr-primary);
   color: var(--clr-primary);
@@ -751,19 +757,18 @@ p {
 }
 @media (max-width: 767px) {
   .gallery-header li {
-    padding: 5px 10px;
+    padding: 5px;
+    font-size: 11px;
   }
 }
 .gallery .images {
   display: flex;
-  padding-block-start: 40px;
-  align-items: center;
-  justify-content: space-between;
+  padding-top: 40px;
   flex-wrap: wrap;
   gap: 20px;
 }
 .gallery .images .box {
-  flex: 1 1 250px;
+  flex: 2 1 200px;
   cursor: pointer;
   overflow: hidden;
   position: relative;

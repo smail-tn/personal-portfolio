@@ -18,7 +18,9 @@
     &.show {
       @include fade("show");
       .space {
-        scale: 1;
+        scale: 1.2;
+        translate: 0 0;
+        rotate: 0deg;
       }
     }
     .close {
@@ -36,14 +38,17 @@
     .space {
       transition: var(--transition-fast);
       scale: 0;
+      rotate: 180deg;
+      translate: 0 -40px;
+
       @include max-box(400px);
+      @include media(sm, "max") {
+        @include max-box(270px);
+      }
       position: relative;
       img {
         @include box(100%);
         cursor: pointer;
-      }
-      @include media(sm, "max") {
-        @include max-box(300px);
       }
       p {
         display: flex;
@@ -53,10 +58,13 @@
     }
   }
   &-controls {
+    display: flex;
+    @include flex-center;
+    gap: 20px;
+
     span {
       cursor: pointer;
-      position: absolute;
-      top: 50%;
+      // position: absolute;
       @include box(40px);
       background-color: var(--clr-white);
       color: var(--clr-black-400);
@@ -64,19 +72,19 @@
       @include circle;
       display: flex;
       @include flex-center;
-      &.prev {
-        left: 30px;
-      }
-      &.next {
-        right: 30px;
-      }
     }
   }
+
   &-header {
     display: flex;
     @include flex-center;
-    gap: 20px;
+    flex-wrap: wrap;
+
+    gap: 10px;
     li {
+      white-space: nowrap;
+      // flex: 1;
+      text-align: center;
       padding: 10px 20px;
       border: border(var(--clr-primary));
       color: var(--clr-primary);
@@ -95,23 +103,24 @@
         background-position: left top;
         color: var(--clr-white);
       }
-      @include media(md,'max') { 
-        padding: 5px 10px;
+      @include media(md, "max") {
+        padding: 5px;
+        font-size: 11px;
       }
     }
   }
   .images {
     display: flex;
-    padding-block-start: 40px;
-    @include flex-between(true);
-
+    padding-top: 40px;
+    flex-wrap: wrap;
     gap: 20px;
     .box {
-      flex: 1 1 250px;
+      flex: 2 1 200px;
       cursor: pointer;
       overflow: hidden;
       position: relative;
       border-radius: 10px;
+
       &:hover {
         &::after {
           @include fade("show");

@@ -6,13 +6,14 @@
     transition: var(--transition);
     background-color: transparent;
     z-index: 10000;
+    position: relative;
+    width: 100%;
+    z-index: 4;
 
     &.active {
       background-color: var(--clr-white);
       box-shadow: var(--shadow-black-100);
       position: fixed;
-      z-index: 4;
-      width: 100%;
       @include top-right(0);
       left: 0;
       padding-block: 0px;
