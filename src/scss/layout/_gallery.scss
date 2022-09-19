@@ -42,9 +42,8 @@
         @include box(100%);
         cursor: pointer;
       }
-      @include media(sm,"max") { 
+      @include media(sm, "max") {
         @include max-box(300px);
-        
       }
       p {
         display: flex;
