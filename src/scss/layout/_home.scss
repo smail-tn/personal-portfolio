@@ -14,14 +14,13 @@
 
     &::after {
       @include pseudo;
-      height: 110%;
-      width: 150%;
+      height: 300%;
+      width: 100%;
       background-color: var(--clr-primary);
-      top: -10%;
-      right: -60%;
+      top: -90%;
+      right: -63%;
       z-index: -1;
-      rotate: 70deg;
-      border-radius: 10px;
+      rotate: -20deg;
     }
 
     .container {
