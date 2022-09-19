@@ -112,7 +112,7 @@
   .images {
     padding-top: 40px;
     column-count: 3;
-    @include media(md,"max") { 
+    @include media(md, "max") {
       column-count: 2;
     }
     .box {
