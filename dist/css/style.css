@@ -293,7 +293,6 @@ p {
 .home .header {
   padding-block: 10px;
   transition: var(--transition);
-  background-color: var(--clr-white);
   z-index: var(--z-navbar);
   position: relative;
   width: 100%;
