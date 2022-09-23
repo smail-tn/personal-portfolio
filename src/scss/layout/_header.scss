@@ -4,11 +4,10 @@
   .header {
     padding-block: 10px;
     transition: var(--transition);
-    background-color: transparent;
-    z-index: 10000;
+    background-color: var(--clr-white);
+    z-index: var(--z-navbar);
     position: relative;
     width: 100%;
-    z-index: 4;
 
     &.active {
       background-color: var(--clr-white);

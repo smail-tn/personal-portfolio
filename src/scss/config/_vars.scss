@@ -7,7 +7,7 @@
 :root {
   /* ===== NAVIGATION SITTINGS ==== */
   /* ======= BODY PROPERTIES ====== */
-  --body-font: "Kaushan Script",sans-serif;
+  --body-font: "Kaushan Script", sans-serif;
   --body-clr: #fff;
   --text-clr: var(--clr-black-400);
 
@@ -33,7 +33,17 @@
   --section-padding: 8rem;
   --transition: all 0.3s linear;
   --transition-fast: all 0.2s linear;
-  --header-height : 7rem;
+  --header-height: 7rem;
+
+  /* ============= Z-index ============ */
+  --z-navbar: 1;
+  --z-page-overlay: 1;
+  --z-light-box: 1;
+  --z-first: 2;
+  --z-last: -1;
+
+  /* ============= Z-index ============ */
+
   /* ============= FONT ============ */
 
   --fz-normal: 14px;

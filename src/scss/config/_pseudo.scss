@@ -3,9 +3,9 @@
   position: $pos;
 }
 
-@mixin page-overlay($bg: black, $opacity: 0.7, $zindex: 1000) {
+@mixin page-overlay($bg: black ,$z:1) {
   background-color: $bg;
-  z-index: $zindex;
+  z-index: $z;
   position: fixed;
   @include box(100vw 100vh);
   @include top-left(0);
@@ -13,24 +13,25 @@
 
   // Fade for backdrop
   &.show {
-    @include fade("show", $opacity);
+    @include fade("show");
   }
 }
 
-@mixin overlay($bg: black, $opacity: 0.5) {
-  background-color: rgba($bg, $opacity);
-  @include box(100%) ;
+@mixin overlay($bg: black ,$z : 1) {
+  background-color: $bg;
+  z-index: $z;
+  @include box(100%);
 }
 
-@mixin fade($type: "hide", $op: 1) {
+@mixin fade($type: "hide") {
   @if ($type == "hide") {
     visibility: hidden;
     opacity: 0;
     transition: visibility 1s, opacity 1s;
   } @else if ($type == "show") {
     visibility: visible;
-    opacity: $op;
-    transition: visibility .5s, opacity .5s;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s;
   }
 }
 
