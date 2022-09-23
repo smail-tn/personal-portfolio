@@ -15,7 +15,9 @@
     @include flex-center;
     display: flex;
     @include fade();
+    pointer-events: none;
     &.show {
+      pointer-events:all;
       @include fade("show");
       .space {
         scale: 1.2;
