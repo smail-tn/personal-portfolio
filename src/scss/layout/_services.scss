@@ -28,6 +28,8 @@
     flex-wrap: wrap;
 
     .box {
+      transform-style: preserve-3d;
+      perspective: 1000px;
       position: relative;
       background-color: var(--clr-white);
       padding: 20px;

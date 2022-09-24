@@ -641,6 +641,8 @@ p {
   flex-wrap: wrap;
 }
 .services-data .box {
+  transform-style: preserve-3d;
+  perspective: 1000px;
   position: relative;
   background-color: var(--clr-white);
   padding: 20px;
