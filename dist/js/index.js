@@ -37,16 +37,16 @@ function toggleNavbar() {
         collapse.removeAttribute("style");
         collapse.classList.remove("open");
       })
-      );
-      document.addEventListener("click", function (e) {
+  );
+  document.addEventListener("click", function (e) {
     if (
       e.target !== collapse &&
       e.target !== navToggler &&
       !navToggler.contains(e.target) &&
       !collapse.contains(e.target)
-      ) {
-        collapse.removeAttribute("style");
-        collapse.classList.remove("open");
+    ) {
+      collapse.removeAttribute("style");
+      collapse.classList.remove("open");
     }
   });
 }

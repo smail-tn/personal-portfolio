@@ -2,10 +2,13 @@
 
 .home {
   padding: 0 !important;
+  background-image: url(../imgs/waves/wave-hero.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 95% 100%;
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  background-color: var(--clr-black-100);
   overflow: hidden;
 
   .landing {
@@ -13,7 +16,7 @@
     position: relative;
 
     &::after {
-      @include pseudo;
+      // @include pseudo;
       height: 300%;
       width: 100%;
       background-color: var(--clr-primary);

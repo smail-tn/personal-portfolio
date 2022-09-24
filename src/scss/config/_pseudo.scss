@@ -3,34 +3,38 @@
   position: $pos;
 }
 
-@mixin page-overlay($bg: black ,$z:1) {
+@mixin page-overlay($bg: black, $op: 1, $z: 1) {
   background-color: $bg;
   z-index: $z;
   position: fixed;
+  opacity: if($op == "i", null, $op);
   @include box(100vw 100vh);
   @include top-left(0);
   @include fade("hide");
 
   // Fade for backdrop
   &.show {
-    @include fade("show");
+    @include fade("show", $op);
   }
 }
 
-@mixin overlay($bg: black ,$z : 1) {
+@mixin overlay($bg: black, $op: 1, $z: 1) {
   background-color: $bg;
+  opacity: if($op == "i", null, $op);
   z-index: $z;
   @include box(100%);
 }
 
-@mixin fade($type: "hide") {
+@mixin fade($type: "hide", $op: 0) {
   @if ($type == "hide") {
     visibility: hidden;
     opacity: 0;
     transition: visibility 1s, opacity 1s;
+    pointer-events: none;
   } @else if ($type == "show") {
+    pointer-events: auto;
     visibility: visible;
-    opacity: 1;
+    opacity: $op;
     transition: visibility 0.5s, opacity 0.5s;
   }
 }

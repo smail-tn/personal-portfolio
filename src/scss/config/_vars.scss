@@ -21,13 +21,18 @@
   // --clr-light: rgba(255 255 255 / 0.25);
   //
   --clr-primary: #00a78e;
-  --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-black-100: 0 0px 2px rgba(0, 0, 0, 0.1);
   --clr-black-900: #000;
   --clr-black-400: #646f87;
   --clr-black-100: #f7f7f7;
   --clr-white: #fff;
   --clr-black-alpha-100: rgba(0, 0, 0, 0.05);
   --title-clr: var(--clr-black-900);
+
+  --clr-violet: #b72ffb;
+  --clr-orangered: orangered;
+  --clr-yellow-green: #2ffb5b;
+  --clr-skeyblue: #39a6eb;
 
   /* ========= TRANSITION ========= */
   --section-padding: 8rem;
@@ -36,9 +41,9 @@
   --header-height: 7rem;
 
   /* ============= Z-index ============ */
-  --z-navbar: 1;
-  --z-page-overlay: 1;
-  --z-light-box: 1;
+  --z-navbar: 3;
+  --z-page-overlay: 4;
+  --z-light-box: 5;
   --z-first: 2;
   --z-last: -1;
 

@@ -6,19 +6,14 @@
   }
   &-preview {
     position: fixed;
-    height: 100%;
-    width: 100%;
-    display: flex;
+    @include box(100%) ; 
     z-index: var(--z-light-box);
-    top: 0;
-    left: 0;
+    @include top-left(0) ; 
     @include flex-center;
     display: flex;
     @include fade();
-    pointer-events: none;
     &.show {
-      pointer-events: all;
-      @include fade("show");
+      @include fade("show" ,1);
       .space {
         scale: 1.2;
         translate: 0 0;
@@ -124,6 +119,10 @@
       overflow: hidden;
       position: relative;
       border-radius: 10px;
+      &::after  { 
+        @include pseudo() ; 
+
+      }
 
       &:hover {
         &::after {
@@ -168,5 +167,5 @@
 }
 
 .page-overlay {
-  @include page-overlay(rgba(black, 0.6), var(--z-page-overlay));
+  @include page-overlay(var(--clr-primary),.5, var(--z-page-overlay));
 }

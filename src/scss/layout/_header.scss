@@ -23,8 +23,6 @@
       }
 
       .nav-link {
-        color: var(--clr-primary);
-
         span {
           background-color: var(--clr-primary);
         }
@@ -62,9 +60,9 @@
       }
 
       &-link {
+        color: var(--clr-primary);
         font-size: var(--size-3);
         position: relative;
-        color: var(--clr-white);
         &.active {
           span {
             width: 83%;
@@ -84,7 +82,7 @@
           width: 0%;
           bottom: -10px;
           left: 0;
-          background-color: var(--clr-white);
+          background-color: var(--clr-primary);
 
           &::after {
             display: block;
