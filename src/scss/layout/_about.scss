@@ -3,8 +3,8 @@
 .about {
   position: relative;
   background-image: url(../imgs/waves/wave-left.png);
-  background-size: 70% 100%;
-  background-position: left center;
+  background-size: 85% 100%;
+  background-position: 0% center;
   background-repeat: no-repeat;
   &::before {
     // @include pseudo   ;
