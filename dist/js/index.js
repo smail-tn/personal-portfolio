@@ -167,3 +167,18 @@ function gallery() {
 
 gallery();
 
+const boxes = document.querySelectorAll(".aos");
+
+const observer = new IntersectionObserver(
+  (entries) =>
+    entries.forEach((entry) =>
+      entry.isIntersecting
+        ? entry.target.classList.add("show")
+        : entry.target.classList.remove("show")
+    ),
+  {
+    threshold: 0.3,
+  }
+);
+
+boxes.forEach((box) => observer.observe(box));

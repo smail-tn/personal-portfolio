@@ -3,21 +3,19 @@
 .services {
   position: relative;
   overflow-x: hidden;
-  background-image: url(../imgs/waves/wave-right.png);
-  background-repeat: no-repeat;
-  background-size: 70% 100%;
-  background-position: 100% bottom;
+
   &::before {
     display: block;
-    // @include pseudo;
     @include box(300px);
     background-color: #eee;
     opacity: 0.9;
     @include circle;
   }
+
   &::before {
     @include top-left(10% -10%);
   }
+
   &-data {
     position: relative;
     padding-top: 60px;
@@ -28,8 +26,6 @@
     flex-wrap: wrap;
 
     .box {
-      transform-style: preserve-3d;
-      perspective: 1000px;
       position: relative;
       background-color: var(--clr-white);
       padding: 20px;
@@ -38,10 +34,18 @@
       text-align: center;
       overflow: hidden;
       flex: 0 1 250px;
-      transition: var(--transition-fast);
       border-bottom: 5px solid;
+      transition: opacity 1s ease-in, 0.5s ease-in;
+      &.aos {
+        @include fade;
+        translate: 0 100px;
+      }
+      &.show {
+        animation: fadeout 1s ease-in-out 1 forwards;
+      }
 
       &:first-child {
+        animation-delay: 200ms;
         border-color: var(--clr-violet);
 
         .head {
@@ -50,6 +54,8 @@
       }
 
       &:nth-child(2) {
+        animation-delay: 300ms;
+
         border-color: var(--clr-orangered);
 
         .head {
@@ -58,6 +64,8 @@
       }
 
       &:last-child {
+        animation-delay: 600ms;
+
         border-color: var(--clr-skeyblue);
 
         .head {
@@ -82,7 +90,7 @@
         translate: 0 -10px;
 
         .text * {
-          transition-delay: 0.1s;
+          animation-delay: 0.1s;
         }
       }
 
@@ -92,5 +100,12 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    @include fade("show");
+    translate: 0 0px;
   }
 }

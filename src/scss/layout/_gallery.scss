@@ -6,14 +6,14 @@
   }
   &-preview {
     position: fixed;
-    @include box(100%) ; 
+    @include box(100%);
     z-index: var(--z-light-box);
-    @include top-left(0) ; 
+    @include top-left(0);
     @include flex-center;
     display: flex;
     @include fade();
     &.show {
-      @include fade("show" ,1);
+      @include fade("show", 1);
       .space {
         scale: 1.2;
         translate: 0 0;
@@ -119,9 +119,8 @@
       overflow: hidden;
       position: relative;
       border-radius: 10px;
-      &::after  { 
-        @include pseudo() ; 
-
+      &::after {
+        @include pseudo();
       }
 
       &:hover {
@@ -167,5 +166,5 @@
 }
 
 .page-overlay {
-  @include page-overlay(var(--clr-primary),.5, var(--z-page-overlay));
+  @include page-overlay(var(--clr-primary), 0.5, var(--z-page-overlay));
 }

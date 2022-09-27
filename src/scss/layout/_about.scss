@@ -2,12 +2,8 @@
 
 .about {
   position: relative;
-  background-image: url(../imgs/waves/wave-left.png);
-  background-size: 85% 100%;
-  background-position: 0% center;
-  background-repeat: no-repeat;
+
   &::before {
-    // @include pseudo   ;
     height: 400px;
     width: 300px;
     background-color: var(--clr-primary);
@@ -17,16 +13,20 @@
     top: 50%;
     z-index: -1;
   }
+
   .container {
     display: flex;
     @include flex-between;
+
     & > div {
       flex: 1;
     }
   }
+
   &-image {
     align-self: flex-end;
   }
+
   &-me {
     .section-header {
       align-items: flex-start;
@@ -35,16 +35,20 @@
 
   .info {
     margin-top: 20px;
+
     p {
       margin-bottom: 30px;
     }
+
     .skills {
       .skill {
         margin-bottom: 10px;
+
         .header {
           margin-bottom: 10px;
           display: flex;
           @include flex-between;
+
           h1 {
             font-size: var(--fz-normal);
           }
@@ -63,6 +67,7 @@
             background-color: var(--clr-primary);
             border-radius: 10px;
             position: relative;
+
             &::after {
               @include pseudo;
               @include box(10px 20px);
@@ -75,40 +80,48 @@
             }
           }
         }
+
         &:first-child {
           .progress {
             span {
               background-color: var(--clr-violet);
+
               &::after {
                 border-color: var(--clr-violet);
               }
             }
           }
         }
+
         &:nth-child(2) {
           .progress {
             span {
               background-color: var(--clr-yellow-green);
+
               &::after {
                 border-color: var(--clr-yellow-green);
               }
             }
           }
         }
+
         &:nth-child(3) {
           .progress {
             span {
               background-color: var(--clr-orangered);
+
               &::after {
                 border-color: var(--clr-orangered);
               }
             }
           }
         }
+
         &:last-child {
           .progress {
             span {
               background-color: var(--clr-skeyblue);
+
               &::after {
                 border-color: var(--clr-skeyblue);
               }

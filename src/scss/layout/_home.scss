@@ -2,10 +2,6 @@
 
 .home {
   padding: 0 !important;
-  background-image: url(../imgs/waves/wave-hero.png);
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 95% 100%;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -51,15 +47,19 @@
       .job {
         color: var(--clr-black-900);
       }
+
       p {
         max-width: 400px;
       }
+
       .main-btn {
         margin-top: 20px;
       }
     }
+
     &-image {
       align-self: flex-end;
+
       .social {
         display: none;
       }
@@ -85,6 +85,7 @@
         display: flex;
         @include flex-center();
         position: relative;
+
         .social {
           display: flex;
           flex-direction: column;
@@ -93,11 +94,13 @@
           position: absolute;
           top: 20px;
           right: 0;
+
           a {
             display: flex;
             @include flex-center;
             font-size: var(--size-3);
             padding: 30px 15px;
+
             &:hover {
               color: var(--clr-primary);
             }

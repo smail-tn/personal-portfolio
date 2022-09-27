@@ -1,4 +1,5 @@
 @use "../config/vars" as *;
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 h1,
 h3,
@@ -12,21 +13,24 @@ h6 {
   letter-spacing: 1px;
 }
 
-* > *,
+*>*,
 * * {
   color: inherit;
   font-family: inherit;
   font-weight: inherit;
 }
+
 .container {
   margin-inline: auto;
   padding-inline: 4rem;
   max-width: 1120px;
   height: 100%;
 }
+
 a {
   text-transform: capitalize;
 }
+
 p {
   line-height: 1.6;
   font-size: var(--fz-normal);
@@ -37,32 +41,40 @@ p {
   display: flex;
   @include flex-center;
   gap: 5px;
+
   li {
     height: 3px;
     background-color: var(--clr-primary);
+
     &:first-child {
       width: 64px;
     }
+
     &:nth-child(2) {
       width: 10px;
     }
+
     &:nth-child(3) {
       width: 7px;
     }
   }
 }
+
 .section {
   min-height: 100vh;
   padding-block: var(--section-padding);
+
   .section-header {
     display: flex;
     flex-direction: column;
     @include flex-center;
     gap: 20px;
   }
+
   .section-title {
     color: var(--clr-primary);
   }
+
   .section-subtitle {
     font-size: var(--size-6);
     font-weight: var(--fw-bold);

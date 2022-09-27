@@ -412,10 +412,6 @@ p {
 }
 .home {
   padding: 0 !important;
-  background-image: url(../imgs/waves/wave-hero.png);
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 95% 100%;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -508,10 +504,6 @@ p {
 }
 .about {
   position: relative;
-  background-image: url(../imgs/waves/wave-left.png);
-  background-size: 85% 100%;
-  background-position: 0% center;
-  background-repeat: no-repeat;
 }
 .about::before {
   height: 400px;
@@ -613,10 +605,6 @@ p {
 .services {
   position: relative;
   overflow-x: hidden;
-  background-image: url(../imgs/waves/wave-right.png);
-  background-repeat: no-repeat;
-  background-size: 70% 100%;
-  background-position: 100% bottom;
 }
 .services::before {
   display: block;
@@ -641,8 +629,6 @@ p {
   flex-wrap: wrap;
 }
 .services-data .box {
-  transform-style: preserve-3d;
-  perspective: 1000px;
   position: relative;
   background-color: var(--clr-white);
   padding: 20px;
@@ -651,22 +637,33 @@ p {
   text-align: center;
   overflow: hidden;
   flex: 0 1 250px;
-  transition: var(--transition-fast);
   border-bottom: 5px solid;
+  transition: opacity 1s ease-in, 0.5s ease-in;
+}
+.services-data .box.aos {
+  opacity: 0;
+  pointer-events: none;
+  translate: 0 100px;
+}
+.services-data .box.show {
+  animation: fadeout 1s ease-in-out 1 forwards;
 }
 .services-data .box:first-child {
+  animation-delay: 200ms;
   border-color: var(--clr-violet);
 }
 .services-data .box:first-child .head {
   background-color: var(--clr-violet);
 }
 .services-data .box:nth-child(2) {
+  animation-delay: 300ms;
   border-color: var(--clr-orangered);
 }
 .services-data .box:nth-child(2) .head {
   background-color: var(--clr-orangered);
 }
 .services-data .box:last-child {
+  animation-delay: 600ms;
   border-color: var(--clr-skeyblue);
 }
 .services-data .box:last-child .head {
@@ -688,12 +685,19 @@ p {
   translate: 0 -10px;
 }
 .services-data .box:hover .text * {
-  transition-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 .services-data .box .text *:first-child {
   margin-bottom: 20px;
 }
 
+@keyframes fadeout {
+  100% {
+    pointer-events: auto;
+    opacity: 0;
+    translate: 0 0px;
+  }
+}
 .gallery {
   position: relative;
 }
@@ -710,16 +714,12 @@ p {
   align-items: center;
   justify-content: center;
   display: flex;
-  visibility: hidden;
   opacity: 0;
-  transition: visibility 1s, opacity 1s;
   pointer-events: none;
 }
 .gallery-preview.show {
   pointer-events: auto;
-  visibility: visible;
   opacity: 1;
-  transition: visibility 0.5s, opacity 0.5s;
 }
 .gallery-preview.show .space {
   scale: 1.2;
@@ -837,9 +837,7 @@ p {
 }
 .gallery .images .box:hover::after {
   pointer-events: auto;
-  visibility: visible;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s;
 }
 .gallery .images .box:hover .icon,
 .gallery .images .box:hover .alt {
@@ -889,14 +887,10 @@ p {
   height: 100vh;
   top: 0;
   left: 0;
-  visibility: hidden;
   opacity: 0;
-  transition: visibility 1s, opacity 1s;
   pointer-events: none;
 }
 .page-overlay.show {
   pointer-events: auto;
-  visibility: visible;
   opacity: 0.5;
-  transition: visibility 0.5s, opacity 0.5s;
 }
