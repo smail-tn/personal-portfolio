@@ -3,13 +3,12 @@
 .aos {
   @include fade;
   translate: -50% 50px;
-  scale: .8;
+  scale: 0.8;
   &.show {
     animation: fadeout 1.2s ease-out 1 forwards;
   }
 }
 @keyframes fadeout {
-
   100% {
     scale: 1;
     @include fade("show");
