@@ -36,13 +36,6 @@
       flex: 0 1 250px;
       border-bottom: 5px solid;
       transition: opacity 1s ease-in, 0.5s ease-in;
-      &.aos {
-        @include fade;
-        translate: 0 100px;
-      }
-      &.show {
-        animation: fadeout 1s ease-in-out 1 forwards;
-      }
 
       &:first-child {
         animation-delay: 200ms;
@@ -100,12 +93,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes fadeout {
-  100% {
-    @include fade("show");
-    translate: 0 0px;
   }
 }

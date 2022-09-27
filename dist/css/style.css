@@ -296,6 +296,26 @@ p {
   font-weight: var(--fw-bold);
 }
 
+.aos {
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  translate: 0 50px;
+}
+.aos.show {
+  animation: fadeout 1s ease-in 1 forwards;
+}
+
+@keyframes fadeout {
+  100% {
+    transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    translate: 0 0px;
+  }
+}
 .home .header {
   padding-block: 10px;
   transition: var(--transition);
@@ -640,14 +660,6 @@ p {
   border-bottom: 5px solid;
   transition: opacity 1s ease-in, 0.5s ease-in;
 }
-.services-data .box.aos {
-  opacity: 0;
-  pointer-events: none;
-  translate: 0 100px;
-}
-.services-data .box.show {
-  animation: fadeout 1s ease-in-out 1 forwards;
-}
 .services-data .box:first-child {
   animation-delay: 200ms;
   border-color: var(--clr-violet);
@@ -691,13 +703,6 @@ p {
   margin-bottom: 20px;
 }
 
-@keyframes fadeout {
-  100% {
-    pointer-events: auto;
-    opacity: 0;
-    translate: 0 0px;
-  }
-}
 .gallery {
   position: relative;
 }
@@ -714,10 +719,14 @@ p {
   align-items: center;
   justify-content: center;
   display: flex;
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .gallery-preview.show {
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
+  visibility: visible;
   pointer-events: auto;
   opacity: 1;
 }
@@ -836,8 +845,10 @@ p {
   position: absolute;
 }
 .gallery .images .box:hover::after {
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
+  visibility: visible;
   pointer-events: auto;
-  opacity: 0;
+  opacity: 1;
 }
 .gallery .images .box:hover .icon,
 .gallery .images .box:hover .alt {
@@ -887,10 +898,14 @@ p {
   height: 100vh;
   top: 0;
   left: 0;
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .page-overlay.show {
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
+  visibility: visible;
   pointer-events: auto;
   opacity: 0.5;
 }

@@ -8,6 +8,7 @@
 @use "./components/reusable";
 
 //  importing sections
+@use './components/animation';
 @use './layout/header';
 @use './layout/home';
 @use './layout/about';

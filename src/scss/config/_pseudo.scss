@@ -14,7 +14,7 @@
 
   // Fade for backdrop
   &.show {
-    @include fade("show" , $op);
+    @include fade("show", $op);
   }
 }
 
@@ -25,11 +25,14 @@
   @include box(100%);
 }
 
-@mixin fade($type: "hide", $op: 0) {
+@mixin fade($type: "hide", $op: 1) {
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
   @if ($type == "hide") {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
   } @else if ($type == "show") {
+    visibility: visible;
     pointer-events: auto;
     opacity: $op;
   }

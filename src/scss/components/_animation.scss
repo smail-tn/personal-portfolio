@@ -1,0 +1,15 @@
+@use "../config/vars" as *;
+
+.aos {
+  @include fade;
+  translate: 0 50px;
+  &.show {
+    animation: fadeout 1s ease-in 1 forwards;
+  }
+}
+@keyframes fadeout {
+  100% {
+    @include fade("show");
+    translate: 0 0px;
+  }
+}
