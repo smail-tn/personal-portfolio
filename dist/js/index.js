@@ -177,7 +177,7 @@ const observer = new IntersectionObserver(
         : entry.target.classList.remove("show")
     ),
   {
-    threshold: 0.1,
+    threshold: 0.15,
   }
 );
 
