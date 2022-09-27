@@ -120,12 +120,18 @@
       position: relative;
       border-radius: 10px;
       &::after {
+        z-index: 4;
         @include pseudo();
+        display: block;
+        background-color: var(--clr-black-alpha-100);
+        opacity: .5;
+        @include box(100%) ;
+        @include fade;
       }
 
       &:hover {
         &::after {
-          @include fade("show");
+          @include fade("show",1);
         }
         .icon,
         .alt {

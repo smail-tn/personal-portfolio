@@ -165,6 +165,7 @@ input[type=file], input[type=color] {
 html {
   font-size: 10px;
   outline: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -301,14 +302,16 @@ p {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  translate: 0 50px;
+  translate: -50% 50px;
+  scale: 0.8;
 }
 .aos.show {
-  animation: fadeout 1s ease-in 1 forwards;
+  animation: fadeout 1.2s ease-out 1 forwards;
 }
 
 @keyframes fadeout {
   100% {
+    scale: 1;
     transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
     visibility: visible;
     pointer-events: auto;
@@ -841,8 +844,18 @@ p {
   border-radius: 10px;
 }
 .gallery .images .box::after {
+  z-index: 4;
   content: "";
   position: absolute;
+  display: block;
+  background-color: var(--clr-black-alpha-100);
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 .gallery .images .box:hover::after {
   transition: visibility 0.5s ease-in, opacity 0.3s ease-in;
