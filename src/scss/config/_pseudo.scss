@@ -164,14 +164,6 @@
 
 //  end to  rgba  function
 
-@function half($el) {
-  @return calc($el/2);
-}
-
-@function double($el) {
-  @return calc($el * 2);
-}
-
 @mixin text-truncate() {
   overflow: hidden;
   text-overflow: ellipsis;
